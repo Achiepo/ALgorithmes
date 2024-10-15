@@ -1,0 +1,19 @@
+1. Initialiser les compteurs :
+   - longueur = 0
+   - nombreDeMots = 0
+   - nombreDeVoyelles = 0
+
+2. Demander à l'utilisateur de saisir une phrase se terminant par un point.
+
+3. Lire la phrase caractère par caractère :
+   - Pour chaque caractère 'c' dans la phrase :
+     a. Incrémenter longueur de 1.
+     b. Si 'c' est un espace et que le caractère précédent n'est pas un espace, incrémenter nombreDeMots de 1.
+     c. Si 'c' est une voyelle (a, e, i, o, u, A, E, I, O, U), incrémenter nombreDeVoyelles de 1.
+
+4. Vérifier si la phrase n'est pas vide. Si elle ne l'est pas, incrémenter nombreDeMots de 1 pour compter le dernier mot avant le point.
+
+5. Afficher :
+   - La longueur de la phrase
+   - Le nombre de mots
+   - Le nombre de voyelles
