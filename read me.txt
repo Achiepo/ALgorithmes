@@ -1,19 +1,30 @@
-1. Initialiser les compteurs :
-   - longueur = 0
-   - nombreDeMots = 0
-   - nombreDeVoyelles = 0
+DEBUT
+    INITIALISER longueur = 0
+    INITIALISER nombre_mots = 0
+    INITIALISER nombre_voyelles = 0
+    INITIALISER phrase = ""
+    
+    AFFICHER "Veuillez entrer une phrase se terminant par un point :"
+    LIRE phrase
 
-2. Demander à l'utilisateur de saisir une phrase se terminant par un point.
+    SI phrase[nombre de caractères - 1] != "." ALORS
+        AFFICHER "La phrase doit se terminer par un point."
+        SORTIR
 
-3. Lire la phrase caractère par caractère :
-   - Pour chaque caractère 'c' dans la phrase :
-     a. Incrémenter longueur de 1.
-     b. Si 'c' est un espace et que le caractère précédent n'est pas un espace, incrémenter nombreDeMots de 1.
-     c. Si 'c' est une voyelle (a, e, i, o, u, A, E, I, O, U), incrémenter nombreDeVoyelles de 1.
+    POUR chaque caractère c DANS phrase FAIRE
+        longueur = longueur + 1
+        
+        SI c EST UN ESPACE ALORS
+            nombre_mots = nombre_mots + 1
 
-4. Vérifier si la phrase n'est pas vide. Si elle ne l'est pas, incrémenter nombreDeMots de 1 pour compter le dernier mot avant le point.
+        SI c EST UNE VOYELLE ALORS
+            nombre_voyelles = nombre_voyelles + 1
+    FIN POUR
 
-5. Afficher :
-   - La longueur de la phrase
-   - Le nombre de mots
-   - Le nombre de voyelles
+    SI longueur > 0 ALORS
+        nombre_mots = nombre_mots + 1  // Compte le dernier mot
+
+    AFFICHER "Longueur de la phrase :", longueur
+    AFFICHER "Nombre de mots :", nombre_mots
+    AFFICHER "Nombre de voyelles :", nombre_voyelles
+FIN
